@@ -1,4 +1,4 @@
-package com.praveen.chirp.user;
+package com.praveen.chirp.security;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
