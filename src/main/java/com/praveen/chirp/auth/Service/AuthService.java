@@ -1,4 +1,4 @@
-package com.praveen.chirp.auth.Service;
+package com.praveen.chirp.auth.service;
 
 import java.time.Instant;
 
