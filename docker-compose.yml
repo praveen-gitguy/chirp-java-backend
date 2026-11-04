@@ -1,0 +1,25 @@
+services:
+  postgres-test:
+    image: postgres:17-alpine
+    container_name: chirp-postgres-test
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: chirp_test
+      POSTGRES_USER: chirp_test
+      POSTGRES_PASSWORD: chirp_test_local
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - chirp_test_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chirp_test -d chirp_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  chirp_test_data:
